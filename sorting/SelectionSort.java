@@ -1,0 +1,23 @@
+package sorting;
+import java.util.Arrays;
+
+public class SelectionSort { // O(n*n)
+    public static void main(String[] args) {
+        int arr[] = {7, 8, 3, 1, 2};
+        // int arr[] = {1, 2, 3, 4, 5};
+
+        // 0 to N-1
+        for (int i = 0; i < arr.length; i++) {
+            // 0 to N-1-i
+            int min = i;
+            for (int j = i+1; j < arr.length; j++) {
+                if( arr[min] > arr[j] ) min = j;
+            }
+            int temp = arr[min];
+            arr[min] = arr[i] ;
+            arr[i] = temp;
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
